@@ -1,3 +1,5 @@
+[SQLDash.pdf](https://github.com/user-attachments/files/23689533/SQLDash.pdf)
+<img width="1920" height="1080" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/4a2bbe6b-ae09-463b-a31a-b0b3cd9f9451" />
 # SQL-DATA-WHEREHOUSE-
 Sales & Customer Analytics – SQL Server + Power BI (Medallion Architecture)
 
