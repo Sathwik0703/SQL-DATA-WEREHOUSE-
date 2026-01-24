@@ -2,138 +2,157 @@
 <img width="1920" height="1080" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/4a2bbe6b-ae09-463b-a31a-b0b3cd9f9451" />
 # SQL-DATA-WHEREHOUSE-
 Sales & Customer Analytics – SQL Server + Power BI (Medallion Architecture)
+📊 Sales & Customer Analytics | End-to-End Data Pipeline
 
-This project takes six CSV files containing customer, product, and sales data and builds a complete analytics pipeline using SQL Server for data engineering and Power BI for visualization.
+Tools: SQL Server, Power BI
+Architecture: Medallion Architecture (Bronze–Silver–Gold), Star Schema
 
-The goal was to simulate a real-world warehouse setup using the Medallion Architecture (Bronze → Silver → Gold) and create a dashboard that delivers actionable business insights.
+📌 Project Overview
 
-📂 Data Sources
+This project is an end-to-end data analytics solution built to transform raw transactional data into actionable business insights. It integrates multiple customer, product, and sales data sources, applies industry-standard data warehousing practices, and delivers an interactive Power BI dashboard for sales and customer analysis.
 
-Total Files: 6 CSVs
+The solution enables stakeholders to track KPIs, understand customer behavior, identify revenue drivers, and make data-driven decisions to improve profitability.
 
-Customer Data (2 files)
+🎯 Business Objective
 
-Customer details
+Consolidate data from multiple source systems into a single analytical platform
 
-Customer ID for joining
+Ensure data quality, historical tracking, and scalability using proper warehouse design
 
-Product Data (2 files)
+Analyze sales performance, customer distribution, and product contribution
 
-Product details
+Identify opportunities for revenue growth, customer retention, and inventory optimization
 
-Product ID for joining
+🗂️ Data Sources
 
-Sales Data (2 files)
+The project integrates 6 structured data sources:
 
-Transaction-level data
+Customer Master
 
-Contains Customer ID and Product ID references
+Customer Demographics
 
-The files together form a relational dataset.
+Customer Geography
 
-🏗️ Data Pipeline (Medallion Architecture)
-1️⃣ Bronze Layer – Raw Data
+Product Master
 
-All CSVs loaded into SQL Server as-is
+Product Category
 
-No transformations
+Sales Orders
 
-Acts as the raw landing zone
+🏗️ Data Architecture – Medallion Architecture
+🔹 Bronze Layer (Raw Data)
 
-2️⃣ Silver Layer – Cleaned & Standardized Data
+Ingested raw data from all source systems into SQL Server
 
-Data cleaning performed in SQL:
+No transformations applied
 
-Handling missing/invalid values
+Maintained full auditability and reprocessing capability
 
-Formatting standardization
+🔹 Silver Layer (Cleaned & Transformed Data)
 
-Data normalization
+Performed ETL operations including:
 
-Derived columns
+Data cleaning, trimming, and deduplication
 
-Lookup joins using shared keys
+Standardization of gender and marital status codes
 
-Enrichment logic
+Date format normalization
 
-3️⃣ Gold Layer – Business-Ready Models
+Integration of customer tables into a single customer dataset
 
-Final reporting layer structured as:
+Integration of product master and product category into a unified product dataset
 
-Fact Table: Sales
+Implemented Slowly Changing Dimension (SCD Type-2) to track historical product price changes
 
-Dimensions: Customers, Products
+🔹 Gold Layer (Analytics-Ready Data)
 
-Implemented using SQL Views
+Designed a Star Schema optimized for reporting
 
-Optimized for downstream analytics and BI tools
+Created:
 
-🔍 Exploratory Data Analysis (SQL)
+dim_customer
 
-EDA and advanced SQL analysis were performed before Power BI import, including:
+dim_product
 
-Trend analysis
+dim_date
 
-Sales breakdowns
+fact_sales
 
-Customer segmentation
+Used surrogate keys and enforced relationships
 
-Product performance
+Optimized model for Power BI performance
 
-Outlier checks
+📐 Data Modeling
 
-📊 Power BI Dashboard
+Dimensional modeling with clearly defined grain at sales order level
 
-The Gold layer was used to build an interactive dashboard showing:
+Separation of descriptive attributes (dimensions) and measures (fact table)
 
-Total Sales
+Time-based analysis enabled using a comprehensive date dimension
 
-Total Orders
+📊 Power BI Dashboard Features
+🔑 Key KPIs
 
-Customer Count
+Total Sales: 29M
 
-Sales by product, category, and geography
+Total Orders: 28K
 
-Top products and customers
+Total Customers: 18K
 
-Gender and country breakdowns
+Total Products: 295
 
-Filters allow drilldowns and exploration from multiple angles.
+Total Quantity Sold: 60K
 
-🗂️ Repository Contents
+Average Product Price: 486
 
-/data – All 6 original CSV files
+📈 Visual Analysis
 
-/sql – Scripts for:
+Customer segmentation by gender and country
 
-Bronze Load
+Product distribution by category
 
-Silver Transformations
+Top customers by total sales
 
-Gold Views
+Top-selling products by revenue
 
-EDA queries
+Category-wise sales contribution
 
-/powerbi – Power BI dashboard (.pbix)
+Interactive date slicer for time-based filtering
 
-/images – Architecture diagram & dashboard screenshots
+🔍 Key Insights
 
-🚀 Tech Stack
+The business generated 29M in sales from 28K orders, indicating strong transaction volume
 
-SQL Server – Data storage, cleaning, modeling
+The United States is the primary revenue-generating market
 
-Power BI – Visualization and reporting
+Customer base is evenly split by gender (~50/50), indicating broad market reach
 
-CSV Files – Raw data source
+Bikes contribute ~98.8% of total revenue, making them the core business driver
 
-📌 Project Highlights
+A small group of top customers contributes ~8K+ sales per customer, highlighting high-value customers
 
-Real relational dataset with connected keys
+💡 Business Recommendations
 
-Fully implemented Medallion Architecture
+Revenue Diversification: Cross-sell accessories and components with bikes to increase average order value
 
-SQL-based cleaning, transformation, and modeling
+Customer Retention: Introduce loyalty programs targeting high-value customers
 
-Professional dashboard built from structured warehouse data
+Inventory Optimization: Prioritize stock planning for top-selling bike models
 
-End-to-end pipeline similar to real enterprise data workflows
+Market Expansion: Apply successful US sales strategies to other high-potential regions
+
+Pricing Strategy: Use historical pricing data to optimize prices for high-demand products
+
+✅ Outcome
+
+This project demonstrates complete ownership of the data analytics lifecycle—from raw data ingestion and warehouse design to advanced analytics and visualization. It reflects real-world data engineering and analytics practices and showcases strong skills in SQL, ETL, dimensional modeling, and Power BI.
+
+📌 Skills Demonstrated
+
+SQL Server (ETL, Data Warehousing, Star Schema, SCD Type-2)
+
+Medallion Architecture (Bronze, Silver, Gold)
+
+Power BI (Data Modeling, DAX, Dashboard Design)
+
+Business Analysis & Insight Generation
